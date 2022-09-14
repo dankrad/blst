@@ -388,6 +388,16 @@ if p2713.in_group():
 if not p2713.mult(2713).is_inf():
     raise AssertionError("disaster")
 
+###
+# Dummy muls
+
+p_start = blst.G1()
+p_mul5 = p_start.dup().mult(5)
+p_mul5_2 = p_start.dup().multiply_by_5()
+
+assert p_mul5.is_equal(p_mul5_2)
+
+
 ########################################################################
 # EIP-2333 tests
 

@@ -322,6 +322,8 @@ public:
     {   blst_p1_mult(&point, &point, scalar, nbits); return this;   }
     P1* mult(const Scalar& scalar)
     {   blst_p1_mult(&point, &point, scalar, 255); return this;   }
+    P1* multiply_by_5()
+    {   blst_p1_multiply_by_5(&point, &point); return this;   }
     P1* cneg(bool flag)
     {   blst_p1_cneg(&point, flag); return this;   }
     P1* neg()

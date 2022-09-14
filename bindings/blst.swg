@@ -724,6 +724,7 @@ import java.nio.file.*;
     blst::P1* hash_to,      blst::P2* hash_to,
     blst::P1* encode_to,    blst::P2* encode_to,
     blst::P1* mult,         blst::P2* mult,
+    blst::P1* multiply_by_5,
     blst::P1* cneg,         blst::P2* cneg,
     blst::P1* neg,          blst::P2* neg,
     blst::P1* add,          blst::P2* add,

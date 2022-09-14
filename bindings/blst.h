@@ -173,6 +173,7 @@ void blst_p1_add_or_double_affine(blst_p1 *out, const blst_p1 *a,
 void blst_p1_double(blst_p1 *out, const blst_p1 *a);
 void blst_p1_mult(blst_p1 *out, const blst_p1 *p, const byte *scalar,
                                                   size_t nbits);
+void blst_p1_multiply_by_5(blst_p1 *out, const blst_p1 *p);
 void blst_p1_cneg(blst_p1 *p, bool cbit);
 void blst_p1_to_affine(blst_p1_affine *out, const blst_p1 *in);
 void blst_p1_from_affine(blst_p1 *out, const blst_p1_affine *in);
