@@ -322,8 +322,6 @@ public:
     {   blst_p1_mult(&point, &point, scalar, nbits); return this;   }
     P1* mult(const Scalar& scalar)
     {   blst_p1_mult(&point, &point, scalar, 255); return this;   }
-    P1* multiply_by_5()
-    {   blst_p1_multiply_by_5(&point, &point); return this;   }
     P1* cneg(bool flag)
     {   blst_p1_cneg(&point, flag); return this;   }
     P1* neg()
@@ -348,6 +346,7 @@ public:
 private:
     friend class P1_Affine;
     friend class P1_Affines;
+    friend class KZG;
     operator const blst_p1*() const { return &point; }
     operator blst_p1*()             { return &point; }
 };
@@ -975,6 +974,13 @@ public:
     {   blst_pairing_raw_aggregate(*this, *q, *p);   }
     PT as_fp12()
     {   return PT(blst_pairing_as_fp12(*this));   }
+};
+
+class KZG {
+public:
+  static P1 multiply_by_5(const P1& p) {
+    P1 ret; blst_p1_multiply_by_5(ret, p); return ret;
+  }
 };
 
 } // namespace blst

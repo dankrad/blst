@@ -393,7 +393,7 @@ if not p2713.mult(2713).is_inf():
 
 p_start = blst.G1()
 p_mul5 = p_start.dup().mult(5)
-p_mul5_2 = p_start.dup().multiply_by_5()
+p_mul5_2 = blst.KZG.multiply_by_5(p_start.dup())
 
 assert p_mul5.is_equal(p_mul5_2)
 
